@@ -1,7 +1,7 @@
 contents of docker file: FROM tensorflow/tensorflow:latest-gpu
 # ^or just latest-gpu-jupyter if you need Jupyter
 
-WORKDIR /tmp
+WORKDIR /tmp  #my main docker's working directory is /tmp
 
 # Set desired Python version
 ENV python_version 3.7
@@ -27,9 +27,5 @@ COPY requirements.txt requirements.txt
 # Install the requirements
 RUN python -m pip install -r requirements.txt
 
-#RUN python -m pip install mpunet .
-
-#RUN mkdir /opt/files
-#COPY . /home/sandeep/Downloads/PMPU_tf_version2/MPU/MultiPlanarUNet/opt/files
 ENTRYPOINT ["mp"] 
 
